@@ -792,3 +792,1209 @@
 
 </body>
 </html>
+
+# Orit Cherny Golan — Academic Website
+
+A clean, responsive, pastel-themed personal academic website built with pure HTML + CSS.  
+No JavaScript · No backend · No frameworks — ready to host on **GitHub Pages** for free.
+
+---
+
+## 📁 File Structure
+
+```
+your-website/
+├── index.html          ← Main website (all content)
+├── style.css           ← All styles and colours
+├── README.md           ← This file
+└── images/
+    ├── profile.jpg     ← Your profile photo (circular in hero section)
+    └── hero-bg.jpg     ← Hero background image
+```
+
+---
+
+## 🚀 How to Publish on GitHub Pages (Step by Step)
+
+### Step 1 — Create a GitHub Account
+1. Go to [github.com](https://github.com) and click **Sign up** (it's free).
+2. Choose a username — this will appear in your website URL.
+
+---
+
+### Step 2 — Create a New Repository
+1. After signing in, click the **+** button (top-right) → **New repository**.
+2. Name it: `your-username.github.io`  
+   *(Replace `your-username` with your actual GitHub username — exactly.)*
+3. Set it to **Public**.
+4. Click **Create repository**.
+
+---
+
+### Step 3 — Upload Your Files
+1. In your new repository, click **Add file** → **Upload files**.
+2. Drag and drop all files:
+   - `index.html`
+   - `style.css`
+   - The `images/` folder (with `profile.jpg` and `hero-bg.jpg`)
+3. Click **Commit changes**.
+
+---
+
+### Step 4 — Enable GitHub Pages
+1. In your repository, go to **Settings** (top menu).
+2. Scroll down to the **Pages** section (left sidebar).
+3. Under **Branch**, select `main` → `/ (root)`.
+4. Click **Save**.
+5. Wait 1–3 minutes. Your site will be live at:  
+   👉 `https://your-username.github.io`
+
+---
+
+## ✉️ Activating the Contact Form (Formspree)
+
+The contact form is pre-built and styled. To make it send emails to you:
+
+### Step 1 — Create a Formspree Account
+1. Go to [formspree.io](https://formspree.io) and sign up for free.
+2. The free plan allows **50 submissions/month** — plenty for academic use.
+
+### Step 2 — Create a New Form
+1. Click **+ New Form**.
+2. Give it a name (e.g., "Website Contact").
+3. Enter your email address (where you want to receive messages).
+4. Copy the **Form Endpoint URL** — it looks like:  
+   `https://formspree.io/f/xabc1234`
+
+### Step 3 — Update index.html
+1. Open `index.html` in any text editor (Notepad, TextEdit, etc.).
+2. Find this line (search for `YOUR_FORM_ID_HERE`):
+   ```html
+   action="https://formspree.io/f/YOUR_FORM_ID_HERE"
+   ```
+3. Replace it with your actual endpoint:
+   ```html
+   action="https://formspree.io/f/xabc1234"
+   ```
+4. Save and re-upload `index.html` to GitHub.
+
+✅ Done! Visitors can now send you messages through the website form.  
+Your email address is **never visible** on the website.
+
+---
+
+## ✏️ How to Edit Content
+
+All text is inside `index.html`. Every editable section has a clear comment like this:
+```
+<!-- ╔══════════════════════════════════════════════╗ -->
+<!-- ║  EDIT: Change your name here.               ║ -->
+<!-- ╚══════════════════════════════════════════════╝ -->
+```
+
+### Quick Edit Guide
+
+| What to change | Where to find it in index.html |
+|---|---|
+| Page title (browser tab) | `<title>` tag in `<head>` |
+| Your name in header | `<a class="header-name">` |
+| Hero name, title, tagline | Inside `<section class="hero">` |
+| About / bio text | Inside `<section id="about">` |
+| Education | `.edu-list` inside about section |
+| Research interests | `.interests-grid` cards |
+| Current projects | `<section id="projects">` |
+| Publications | `<section id="publications">` |
+| Teaching table | `<section id="teaching">` |
+| Talks & conferences | `.talks-grid` cards |
+| Phone number | `<section id="contact">` |
+| Footer copyright year | `<footer>` section |
+
+---
+
+## 🎨 How to Change Colours
+
+Open `style.css` and find the `:root` block at the top.  
+Change any colour value — the whole website updates automatically:
+
+```css
+:root {
+  --clr-sage:        #A8C5B0;   /* primary green accent */
+  --clr-rose:        #E8B9C0;   /* secondary rose accent */
+  --clr-lavender:    #C5B8E2;   /* tertiary lavender accent */
+  --clr-bg:          #FAFAF8;   /* main background */
+  /* ... */
+}
+```
+
+---
+
+## 🖼️ How to Replace Images
+
+### Profile Photo
+1. Prepare a square photo (at least 400×400 pixels).
+2. Name it `profile.jpg`.
+3. Place it in the `images/` folder (replacing the existing one).
+4. Upload to GitHub.
+
+### Hero Background
+1. Prepare a landscape photo (at least 1200×800 pixels).
+2. Name it `hero-bg.jpg`.
+3. Place it in the `images/` folder (replacing the existing one).
+4. Upload to GitHub.
+
+**Note:** HEIC photos (iPhone format) may not display in all browsers.  
+Always convert to `.jpg` or `.png` before using. Free tools: [CloudConvert](https://cloudconvert.com/heic-to-jpg)
+
+---
+
+## 🔗 Academic Profile Links
+
+All external links are in `index.html`. Current links configured:
+
+| Profile | Link |
+|---|---|
+| Google Scholar | https://scholar.google.com/citations?user=xFIUFrQAAAAJ&hl=en |
+| ORCID | https://orcid.org/0000-0003-0497-0111 |
+| YVC Faculty Page | https://yedion.yvc.ac.il/... |
+
+To add a new link (e.g., ResearchGate), find the `profile-links` section and add:
+```html
+<li><a href="https://www.researchgate.net/profile/YOUR_PROFILE" target="_blank" rel="noopener noreferrer">📄 ResearchGate</a></li>
+```
+
+---
+
+## 🛠️ Technical Notes
+
+- **Pure HTML + CSS only** — no JavaScript, no build tools, no dependencies.
+- **Responsive** — works on mobile, tablet, and desktop.
+- **Google Fonts** loaded via CDN (requires internet connection to display correctly).
+- **Formspree** handles form submissions — no server needed.
+- **GitHub Pages** hosts everything for free.
+
+---
+
+## 📞 Support
+
+Website built for: **Orit Cherny Golan**  
+If you need to make significant changes, you can ask Claude at [claude.ai](https://claude.ai) to help edit specific sections by sharing the relevant part of the HTML or CSS file.
+
+/* ================================================================
+   style.css — Orit Cherny Golan Academic Website
+   Pastel Academic Design · Pure CSS · GitHub Pages Ready
+   ================================================================ */
+
+
+/* ── CSS Custom Properties (Design Tokens) ─────────────────────── */
+/* ╔══════════════════════════════════════════════════════════════╗ */
+/* ║  EDIT: Change colours here to restyle the entire website.   ║ */
+/* ╚══════════════════════════════════════════════════════════════╝ */
+:root {
+  /* Pastel palette */
+  --clr-sage:        #A8C5B0;   /* sage green — primary accent         */
+  --clr-sage-light:  #DCF0E2;   /* very light sage — backgrounds       */
+  --clr-sage-dark:   #5E8C6E;   /* dark sage — hover / active          */
+
+  --clr-rose:        #E8B9C0;   /* dusty rose — secondary accent       */
+  --clr-rose-light:  #F9EAF0;   /* very light rose — alt sections      */
+
+  --clr-lavender:    #C5B8E2;   /* lavender — tertiary accent          */
+  --clr-lavender-lt: #EDE8F8;   /* light lavender — cards, highlight   */
+
+  --clr-sky:         #B3D0E8;   /* sky blue — links                    */
+  --clr-sky-dark:    #4A82A6;   /* deep sky — link hover               */
+
+  --clr-bg:          #FAFAF8;   /* main background (warm white)        */
+  --clr-alt:         #F5F0F7;   /* alternate section background        */
+
+  --clr-text:        #2E3A4E;   /* primary text (dark slate)           */
+  --clr-text-muted:  #6B7A8E;   /* muted / secondary text              */
+  --clr-border:      #E0D9F0;   /* subtle borders                      */
+
+  --clr-white:       #FFFFFF;
+  --clr-header-bg:   #F0EBF7;   /* header background                   */
+
+  /* Typography */
+  --font-serif:  'Cormorant Garamond', Georgia, serif;
+  --font-sans:   'Nunito', 'Segoe UI', sans-serif;
+
+  /* Spacing */
+  --section-gap:    5rem;
+  --container-max:  1100px;
+  --radius:         12px;
+  --radius-sm:      8px;
+
+  /* Shadows */
+  --shadow-sm:  0 2px 8px rgba(100, 80, 140, 0.08);
+  --shadow-md:  0 6px 24px rgba(100, 80, 140, 0.12);
+  --shadow-lg:  0 12px 40px rgba(100, 80, 140, 0.15);
+}
+
+
+/* ── Reset & Base ───────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--clr-text);
+  background-color: var(--clr-bg);
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--clr-text);
+}
+
+a {
+  color: var(--clr-sky-dark);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--clr-sage-dark);
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* ── Layout Container ───────────────────────────────────────────── */
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+
+/* ================================================================
+   HEADER
+   ================================================================ */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--clr-header-bg);
+  border-bottom: 2px solid var(--clr-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  gap: 1rem;
+}
+
+/* ╔══════════════════════════════════════════════════════════════╗ */
+/* ║  EDIT: The name shown in the top-left corner of the header. ║ */
+/* ╚══════════════════════════════════════════════════════════════╝ */
+.header-name {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--clr-text);
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.header-name:hover {
+  color: var(--clr-sage-dark);
+  text-decoration: none;
+}
+
+.main-nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.main-nav li a {
+  display: block;
+  padding: 0.4rem 0.85rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--clr-text-muted);
+  border-radius: 20px;
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.main-nav li a:hover {
+  background-color: var(--clr-lavender-lt);
+  color: var(--clr-sage-dark);
+  text-decoration: none;
+}
+
+
+/* ================================================================
+   HERO
+   ================================================================ */
+.hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+
+  /* ╔════════════════════════════════════════════════════════════╗ */
+  /* ║  EDIT: Change the hero background image path if needed.   ║ */
+  /* ╚════════════════════════════════════════════════════════════╝ */
+  background-image: url('images/hero-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  overflow: hidden;
+}
+
+/* Pastel gradient overlay on top of the photo */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(220, 240, 226, 0.88) 0%,
+    rgba(197, 184, 226, 0.80) 50%,
+    rgba(232, 185, 192, 0.78) 100%
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 3rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+/* Profile photo circle */
+.hero-photo-wrap {
+  flex-shrink: 0;
+}
+
+.hero-photo {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid var(--clr-white);
+  box-shadow: var(--shadow-lg),
+              0 0 0 8px rgba(200, 180, 230, 0.3);
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 280px;
+}
+
+.hero-greeting {
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--clr-sage-dark);
+  margin-bottom: 0.5rem;
+}
+
+.hero-name {
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  font-weight: 700;
+  color: var(--clr-text);
+  margin-bottom: 0.4rem;
+  line-height: 1.1;
+}
+
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-style: italic;
+  color: var(--clr-sage-dark);
+  margin-bottom: 0.6rem;
+}
+
+.hero-affil {
+  font-size: 0.95rem;
+  color: var(--clr-text-muted);
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+  line-height: 1.5;
+}
+
+.hero-tagline {
+  font-size: 1.05rem;
+  color: var(--clr-text);
+  max-width: 560px;
+  margin-bottom: 2rem;
+  font-style: italic;
+  opacity: 0.85;
+}
+
+/* Hero buttons row */
+.hero-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+
+/* ── Buttons ─────────────────────────────────────────────────── */
+.btn {
+  display: inline-block;
+  padding: 0.65rem 1.5rem;
+  border-radius: 24px;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s, transform 0.15s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: var(--clr-sage);
+  color: var(--clr-white);
+  border-color: var(--clr-sage);
+}
+
+.btn-primary:hover {
+  background-color: var(--clr-sage-dark);
+  border-color: var(--clr-sage-dark);
+  color: var(--clr-white);
+}
+
+.btn-outline {
+  background-color: rgba(255, 255, 255, 0.7);
+  color: var(--clr-text);
+  border-color: var(--clr-sage);
+  backdrop-filter: blur(4px);
+}
+
+.btn-outline:hover {
+  background-color: var(--clr-sage-light);
+  color: var(--clr-sage-dark);
+}
+
+.btn-full {
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+}
+
+
+/* ================================================================
+   SHARED SECTION STYLES
+   ================================================================ */
+.section {
+  padding: var(--section-gap) 0;
+}
+
+.section-alt {
+  background-color: var(--clr-alt);
+}
+
+.section-title {
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  margin-bottom: 0.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+/* Decorative underline under section titles */
+.section-title::after {
+  content: '';
+  display: block;
+  height: 4px;
+  width: 60%;
+  background: linear-gradient(90deg, var(--clr-sage), var(--clr-lavender), var(--clr-rose));
+  border-radius: 2px;
+  margin-top: 0.35rem;
+}
+
+.section-lead {
+  font-size: 1.05rem;
+  color: var(--clr-text-muted);
+  max-width: 700px;
+  margin-bottom: 2.5rem;
+  margin-top: 0.75rem;
+}
+
+.section-lead a {
+  color: var(--clr-sage-dark);
+  font-weight: 600;
+}
+
+
+/* ================================================================
+   ABOUT
+   ================================================================ */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 3rem;
+  align-items: start;
+}
+
+.about-text p {
+  margin-bottom: 1.1rem;
+  font-size: 1.025rem;
+}
+
+/* Cards (used in sidebar) */
+.card {
+  background: var(--clr-white);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--clr-border);
+  margin-bottom: 1.25rem;
+}
+
+.card-title {
+  font-size: 1.05rem;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  color: var(--clr-sage-dark);
+  margin-bottom: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.8rem;
+}
+
+/* Education list */
+.edu-list li {
+  display: grid;
+  grid-template-columns: 3rem 1fr;
+  gap: 0.25rem 0.5rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px dashed var(--clr-border);
+  align-items: start;
+}
+
+.edu-list li:last-child {
+  border-bottom: none;
+}
+
+.edu-year {
+  font-weight: 700;
+  color: var(--clr-sage-dark);
+  font-size: 0.85rem;
+  grid-column: 1;
+  grid-row: 1;
+  padding-top: 0.1rem;
+}
+
+.edu-deg {
+  font-weight: 600;
+  font-size: 0.9rem;
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.edu-inst {
+  font-size: 0.82rem;
+  color: var(--clr-text-muted);
+  grid-column: 2;
+  grid-row: 2;
+}
+
+/* Profile links */
+.profile-links li {
+  padding: 0.45rem 0;
+  border-bottom: 1px dashed var(--clr-border);
+}
+
+.profile-links li:last-child {
+  border-bottom: none;
+}
+
+.profile-links a {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--clr-sky-dark);
+}
+
+.profile-links a:hover {
+  color: var(--clr-sage-dark);
+}
+
+
+/* ================================================================
+   RESEARCH INTERESTS
+   ================================================================ */
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.interest-card {
+  background: var(--clr-white);
+  border-radius: var(--radius);
+  padding: 1.75rem 1.5rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--clr-border);
+  border-top: 4px solid var(--clr-lavender);
+  transition: box-shadow 0.25s, transform 0.25s;
+}
+
+.interest-card:nth-child(2) { border-top-color: var(--clr-sage); }
+.interest-card:nth-child(3) { border-top-color: var(--clr-rose); }
+.interest-card:nth-child(4) { border-top-color: var(--clr-sky); }
+.interest-card:nth-child(5) { border-top-color: var(--clr-lavender); }
+.interest-card:nth-child(6) { border-top-color: var(--clr-sage); }
+
+.interest-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+}
+
+.interest-icon {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+  line-height: 1;
+}
+
+.interest-card h3 {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+  color: var(--clr-text);
+}
+
+.interest-card p {
+  font-size: 0.9rem;
+  color: var(--clr-text-muted);
+  line-height: 1.65;
+}
+
+
+/* ================================================================
+   CURRENT PROJECTS
+   ================================================================ */
+.project-item {
+  background: var(--clr-white);
+  border-left: 5px solid var(--clr-sage);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.25rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.project-item:nth-child(even) {
+  border-left-color: var(--clr-lavender);
+}
+
+.project-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background-color: var(--clr-sage-light);
+  color: var(--clr-sage-dark);
+  padding: 0.2rem 0.7rem;
+  border-radius: 20px;
+  margin-bottom: 0.5rem;
+}
+
+.project-item h3 {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.project-item p {
+  font-size: 0.9rem;
+  color: var(--clr-text-muted);
+}
+
+
+/* ================================================================
+   PUBLICATIONS
+   ================================================================ */
+.pub-category {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--clr-sage-dark);
+  border-bottom: 2px solid var(--clr-sage-light);
+  padding-bottom: 0.4rem;
+  margin-bottom: 1.25rem;
+  margin-top: 2rem;
+}
+
+.pub-list {
+  list-style: decimal;
+  padding-left: 1.5rem;
+}
+
+.pub-item {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px dashed var(--clr-border);
+}
+
+.pub-item:last-child {
+  border-bottom: none;
+}
+
+.pub-ref {
+  flex: 1;
+  min-width: 220px;
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+.pub-ref em {
+  color: var(--clr-text);
+  font-style: italic;
+}
+
+.pub-meta {
+  display: inline-block;
+  background-color: var(--clr-lavender-lt);
+  color: var(--clr-sage-dark);
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.15rem 0.6rem;
+  border-radius: 12px;
+  margin-left: 0.4rem;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.pub-doi {
+  flex-shrink: 0;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--clr-sage-dark);
+  border: 1.5px solid var(--clr-sage);
+  padding: 0.2rem 0.75rem;
+  border-radius: 16px;
+  transition: background-color 0.2s;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.pub-doi:hover {
+  background-color: var(--clr-sage);
+  color: var(--clr-white);
+  text-decoration: none;
+}
+
+
+/* ================================================================
+   TEACHING
+   ================================================================ */
+.teaching-inst {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--clr-sage-dark);
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+  padding-left: 1rem;
+  border-left: 4px solid var(--clr-sage);
+}
+
+.table-wrap {
+  overflow-x: auto;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 0.5rem;
+}
+
+.teaching-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  background: var(--clr-white);
+}
+
+.teaching-table thead th {
+  background-color: var(--clr-lavender-lt);
+  color: var(--clr-text);
+  font-weight: 700;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border-bottom: 2px solid var(--clr-border);
+  white-space: nowrap;
+}
+
+.teaching-table tbody td {
+  padding: 0.65rem 1rem;
+  border-bottom: 1px solid var(--clr-border);
+  vertical-align: top;
+}
+
+.teaching-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.teaching-table tbody tr:hover {
+  background-color: var(--clr-sage-light);
+}
+
+
+/* ================================================================
+   TALKS & CONFERENCES
+   ================================================================ */
+.talks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 1.75rem;
+}
+
+.talk-item {
+  background: var(--clr-white);
+  border-radius: var(--radius);
+  padding: 1.4rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--clr-border);
+  position: relative;
+  padding-top: 1rem;
+}
+
+.talk-date {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  background-color: var(--clr-rose-light);
+  color: #7A3A55;
+  padding: 0.2rem 0.65rem;
+  border-radius: 12px;
+  margin-right: 0.4rem;
+  margin-bottom: 0.3rem;
+}
+
+.talk-role {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  background-color: var(--clr-lavender-lt);
+  color: var(--clr-sage-dark);
+  padding: 0.2rem 0.65rem;
+  border-radius: 12px;
+  margin-bottom: 0.3rem;
+}
+
+.talk-item h3 {
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  font-weight: 700;
+  margin-top: 0.5rem;
+  margin-bottom: 0.3rem;
+  line-height: 1.4;
+}
+
+.talk-item p {
+  font-size: 0.83rem;
+  color: var(--clr-text-muted);
+  line-height: 1.55;
+}
+
+.talk-venue {
+  font-style: italic;
+  margin-top: 0.25rem;
+  font-size: 0.8rem !important;
+}
+
+.talks-note {
+  font-size: 0.9rem;
+  color: var(--clr-text-muted);
+}
+
+.talks-note a {
+  font-weight: 600;
+}
+
+
+/* ================================================================
+   CONTACT
+   ================================================================ */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.contact-block {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  margin-bottom: 1.75rem;
+}
+
+.contact-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+.contact-block strong {
+  display: block;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--clr-sage-dark);
+  margin-bottom: 0.25rem;
+}
+
+.contact-block p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Contact Form */
+.contact-form-wrap {
+  background: var(--clr-white);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--clr-border);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1.1rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--clr-text);
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.03em;
+}
+
+.req {
+  color: var(--clr-sage-dark);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border: 1.5px solid var(--clr-border);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--clr-text);
+  background-color: var(--clr-bg);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--clr-sage);
+  box-shadow: 0 0 0 3px rgba(168, 197, 176, 0.25);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-note {
+  font-size: 0.78rem;
+  color: var(--clr-text-muted);
+  margin-top: 0.75rem;
+  text-align: center;
+}
+
+
+/* ================================================================
+   FOOTER
+   ================================================================ */
+.site-footer {
+  background-color: var(--clr-text);
+  color: rgba(255, 255, 255, 0.7);
+  padding: 1.75rem 0;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-copy {
+  font-size: 0.85rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.footer-links a {
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: var(--clr-sage);
+  text-decoration: none;
+}
+
+
+/* ================================================================
+   RESPONSIVE — TABLET (≤ 900px)
+   ================================================================ */
+@media (max-width: 900px) {
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    background-attachment: scroll; /* parallax off on tablet */
+  }
+
+}
+
+
+/* ================================================================
+   RESPONSIVE — MOBILE (≤ 640px)
+   ================================================================ */
+@media (max-width: 640px) {
+
+  :root {
+    --section-gap: 3rem;
+  }
+
+  /* Stack header on mobile */
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .main-nav ul {
+    gap: 0.2rem;
+  }
+
+  .main-nav li a {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.78rem;
+  }
+
+  /* Stack hero content */
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 1.75rem;
+  }
+
+  .hero-photo {
+    width: 160px;
+    height: 160px;
+  }
+
+  .hero-links {
+    justify-content: center;
+  }
+
+  .hero-tagline {
+    font-size: 0.95rem;
+  }
+
+  /* Stack form row on mobile */
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  /* Footer stack */
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-links {
+    justify-content: center;
+  }
+
+  /* Talks grid — single column on mobile */
+  .talks-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Interests grid — single column on mobile */
+  .interests-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Tables — allow horizontal scroll */
+  .table-wrap {
+    overflow-x: auto;
+  }
+
+}
