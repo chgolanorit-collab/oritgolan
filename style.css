@@ -2,7 +2,91 @@
    style.css — Orit Cherny Golan Academic Website
    Pastel Academic Design · Pure CSS · GitHub Pages Ready
    ================================================================ */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f7f3ee;
+  color: #1f2933;
+  line-height: 1.6;
+}
 
+header {
+  background: linear-gradient(135deg, #6b4f8a, #2f6f73);
+  color: white;
+  padding: 60px 12%;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 48px;
+  margin: 10px 0;
+}
+
+header p {
+  font-size: 20px;
+  margin: 8px 0;
+}
+
+nav {
+  background: white;
+  padding: 16px 12%;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: #2f6f73;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #6b4f8a;
+}
+
+section {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 0 24px;
+}
+
+h2 {
+  color: #6b4f8a;
+  font-size: 32px;
+  border-bottom: 3px solid #d9c7b8;
+  padding-bottom: 8px;
+}
+
+.card {
+  background: white;
+  padding: 28px;
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  margin-bottom: 24px;
+}
+
+a {
+  color: #2f6f73;
+}
+
+.profile-image {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 5px solid white;
+  margin-bottom: 20px;
+}
 
 /* ── CSS Custom Properties (Design Tokens) ─────────────────────── */
 /* ╔══════════════════════════════════════════════════════════════╗ */
